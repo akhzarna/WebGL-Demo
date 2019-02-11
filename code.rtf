@@ -1,0 +1,54 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <html>\
+  <head>\
+    <title> WebGL testing </title>\
+    \
+      <script language = "javascript">\
+\
+      function initialiseWebGL()\{\
+\
+      var canvas = document.getElementById("gl");\
+\
+      var gl =  canvas.getContext("webgl") ||\
+                canvas.getContext("experimental-webgl") ||\
+                canvas.getContext("moz-webgl") ||\
+                canvas.getContext("webkit-3d");\
+\
+      if (gl) \{\
+        var extensions = gl.getSupportedExtensions();\
+        console.log("Gl is working");\
+        console.log(gl);\
+        console.log(extensions);\
+\
+        gl.viewportWidth = canvas.width;\
+        gl.viewportHeight = canvas.height;\
+        gl.clearColor(0.0,0.0,0.0,1.0);\
+        gl.clear(gl.COLOR_BUFFER_BIT);\
+\
+      \}else\{\
+        console.log("gl is not initialised");\
+      \}\
+\}\
+</script>\
+\
+\
+</head>\
+\
+  <body onload = "initialiseWebGL()">\
+\
+    <h1>\
+      TESTING WebGL\
+    </h1>\
+\
+    <canvas id = "gl" width = "400" height = "500">\
+    </canvas>\
+\
+  </body>\
+</html>\
+}
